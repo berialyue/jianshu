@@ -43,11 +43,11 @@ class Header extends Component {
               ></NavSearch>
             </CSSTransition>
             <i className = {this.props.focused ? 'focused iconfont' : 'iconfont'}>&#xe679;</i>
-            {this.getListArea(this.props.focused)}
+            {this.getListArea()}
           </SearchWrapper>
         </Nav>
         <Addition>
-          <Button className="writting">
+          <Button className="writing">
             <i className="iconfont">&#xe608;</i>
             写文章
           </Button>
@@ -57,8 +57,8 @@ class Header extends Component {
     )
   }
 
-  getListArea = (show) => {
-    if(show) {
+  getListArea = () => {
+    if(this.props.focused) {
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -66,13 +66,11 @@ class Header extends Component {
             <SearchInfoSwitch>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
+            {
+              this.props.list.map((item) => {
+                return <SearchInfoItem key={item}>{item}</SearchInfoItem>
+              })
+            }
           </SearchInfoList>
         </SearchInfo>
       )
@@ -84,13 +82,15 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.getIn(['header', 'focused'])
+    focused: state.getIn(['header', 'focused']),
+    list: state.getIn(['header', 'list'])
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus() {
+      dispatch(actionCreators.getList())
       dispatch(actionCreators.searchFocus())
     },
     handleInputBlur() {
