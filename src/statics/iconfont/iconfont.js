@@ -16,11 +16,4 @@ export const IconFont = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  .icon-fangdajing:before { content: "\e679"; }
-
-  .icon-Aa:before { content: "\e607"; }
-  
-  .icon--quill:before { content: "\e608"; }
-  
-  .icon-shuaxin:before { content: "\e640"; }
 ` 
