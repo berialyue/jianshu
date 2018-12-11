@@ -25,6 +25,22 @@ const defaultState = fromJS({
     title: '三行情书｜我还是喜欢你',
     desc: '我还是很喜欢你 像海上的波浪 一波未平一波又起 我还是很喜欢你 像孤城狼烟四起 千军万马也要奔向你 我还是很喜欢你 像日月轮回交替 情不知所起 ...',
     imgUrl: 'https://upload-images.jianshu.io/upload_images/1696764-9196364e85a27a6b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240'
+  }],
+  recommendList: [{
+    id: 1,
+    imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png"
+  }, {
+    id: 2,
+    imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png"
+  }, {
+    id: 3,
+    imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
+  }, {
+    id: 4,
+    imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+  }, {
+    id: 5,
+    imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
   }]
 })
 
