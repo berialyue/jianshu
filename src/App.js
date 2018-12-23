@@ -15,9 +15,9 @@ class App extends Component {
         <Fragment>
           <GlobalStyle />
           <IconFont />
-          <Header></Header>
-          <BrowserRouter>
+          <BrowserRouter> 
             <div>
+              <Header></Header>
               <Route path='/' exact component={Home}></Route>
               <Route path='/detail' exact component={Detail}></Route>
             </div>
