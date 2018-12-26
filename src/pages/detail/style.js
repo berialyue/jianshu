@@ -29,3 +29,4 @@ export const Content = styled.div`
     font-weight: bold;
   }
 `
+
