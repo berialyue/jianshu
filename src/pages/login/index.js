@@ -13,9 +13,9 @@ class Login extends PureComponent {
     return (
       <LoginWrapper>
         <LoginBox>
-          <Input placeholder='账号'></Input>
-          <Input placeholder='密码'></Input>
-          <Button>登录</Button>
+          <Input placeholder='账号' innerRef={(input)=>{this.account = input}}></Input>
+          <Input placeholder='密码' type='password' innerRef={(input)=>{this.password = input}}></Input>
+          <Button onClick={()=>{this.props.login(this.account, this.password)}}>登录</Button>
         </LoginBox>
       </LoginWrapper>
     )
@@ -27,6 +27,9 @@ const mapState = (state) => ({
 })
 
 const mapDispatch = (dispatch) => ({
+  login(accountElem, passwordElem){
+    dispatch(actionCreators.login(accountElem.value, passwordElem.value))
+  }
 })
 
 export default connect(mapState, mapDispatch)(Login) 
