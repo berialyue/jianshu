@@ -9,14 +9,19 @@ const changeLogin = () => ({
 
 export const login = (account, password) => {
   return (dispath) => {
-    axios.get(`/api/login?account=${account}&password=${password}`)
+    axios.get(`/api/login.json?account=${account}&password=${password}`)
       .then((res) => {
         const result = res.data.data
         if(result) {
-          dispath()
+          dispath(changeLogin())
         }else {
           alert('login fail')
         }
       })
   }
 }
+
+export const logout = () => ({
+  type: constants.LOGOUT,
+  value: false
+})
